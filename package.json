@@ -1,0 +1,23 @@
+{
+  "name": "Flock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toddbest2004/Flock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toddbest2004/Flock/issues"
+  },
+  "homepage": "https://github.com/toddbest2004/Flock",
+  "dependencies": {
+    "express": "^4.13.4",
+    "request": "^2.70.0"
+  }
+}
