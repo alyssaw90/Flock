@@ -11,8 +11,9 @@ app.get('/*', function(req,res){
 	res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
-var port = process.env.PORT || 3000;
-var serverip = process.env.IP || "localhost";
+// var port = process.env.PORT || 3000;
+// var serverip = process.env.IP || "localhost";
 
-app.listen(port, serverip);
-console.log('Server running at '+serverip+":"+port);
+// app.listen(port, serverip);
+// console.log('Server running at '+serverip+":"+port);
+app.listen(process.env.PORT || 3000)
