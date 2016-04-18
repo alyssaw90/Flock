@@ -28,7 +28,7 @@ $(function(){
     function initMap(lat, long){
         L.mapbox.accessToken = 'pk.eyJ1IjoidG9kZGJlc3QyMDA0IiwiYSI6ImNpbXhra2JsZjAzanh1d200aDB0cmI1Z3oifQ.ZVQ1Gg1zsOnYvud8rv4shA';
         map = L.mapbox.map('map', 'mapbox.streets')
-          .setView([lat, long], 14);
+          .setView([lat, long], 16);
         L.marker([lat, long], {
             icon: L.mapbox.marker.icon(icons['here'])
         }).addTo(map);  
