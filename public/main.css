@@ -40,8 +40,7 @@ body { margin:0; padding:0; }
 	color: #b1ddeb;
 }
 
-#food, #coffee, #drinks, #outdoors, #shops,
-.action-buttons
+#food, #coffee, #drinks, #outdoors, #shops
 {
 	display: none;
 }
@@ -76,12 +75,61 @@ body { margin:0; padding:0; }
 	background-size: 100%;
 }
 
-@media (min-width: 1308px) {
+#locate {
+	background-image: url('img/location-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#interests {
+	background-image: url('img/interests-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.locate-button,
+.interests-button {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 71px;
+	border: 10px solid rgba(216,216,216,1.0);
+}
 
 	.action-buttons {
 		position: absolute;
 		margin: 0 auto;
-		top: 86%;
+		top: 80%;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 1000px;
+		height: 100px;
+	}
+.locate-button {
+		left: 30%;
+		right: 0;
+	}
+
+.interests-button {
+	left: 0;
+	right: 30%;
+}
+
+@media (min-width: 1308px) {
+
+	.interests-button {
+	display: none;
+}
+
+	.action-buttons {
+		position: absolute;
+		margin: 0 auto;
+		top: 80%;
 		left: 0px;
 		right: 0px;
 		bottom: 0px;
@@ -114,7 +162,7 @@ body { margin:0; padding:0; }
 		border: 7px solid #fff;
 	}
 
-	#locate-button {
+	.locate-button {
 		left: 96%;
 	}
 	
