@@ -1,0 +1,517 @@
+﻿/*
+Blue: #5dc0db
+White/Page Background: #fff
+Text-color/Dark Gray:#7d7d7d
+Sub text/light gray:#b8b8b8
+
+Interests circle background color: #e0e0e0
+Interests "Select All" Text Color: #e0e0e0
+*/
+
+@-ms-viewport{
+  width: device-width;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.navbar {
+	height: 7%;
+	background-color: #5dc0db;
+	margin-bottom: 0px;
+}
+
+
+.navbar h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 1.7em;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	text-decoration: none;
+	height: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	line-height: 2.7em;
+	padding-top: 0.5%;
+}
+
+
+.navbar a:hover {
+	text-decoration: none;
+}
+
+.navbar a:visited {
+	text-decoration: none;
+}
+
+
+.address-dropdown {
+	padding-left: 2%;
+	font-size: 1.1em;
+	color: #b1ddeb;
+}
+
+#map-image {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.row {
+	width: 100%;
+}
+
+#row-map {
+	margin-left: 0;
+}
+
+
+#interests-button, #locate-button {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 71px;
+	border: 10px solid rgba(216,216,216,1.0);
+}
+
+#culture-button, #sports-button, #sports-button, 
+#music-button, #food-button, #happyhour-button, #coffee-button 
+{
+	display: none;
+}
+
+#interests-button {
+	
+}
+
+#locate-button {
+	margin-left: 0px;
+	left: 60%;
+	top: auto;
+}
+
+.action-buttons {
+	position: absolute;
+	margin: 0 auto;
+	top: 88%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 250px;
+	height: 100px;
+}
+
+#address {
+	color: #fff;
+	text-align: center;
+	font-size: 33px;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	text-decoration: none;
+}
+
+#address-field {
+	display: none;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 76%;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 23px;
+	padding-right: 23px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	font-size: 1.2em;
+	line-height: 1.42857143;
+	color: #6E6E6E;
+	background-color: #fff;
+	background-image: none;
+	/*border: 1px solid #ccc;*/
+	font-family: 'Montserrat';
+}
+
+.btn-int {
+	display: none;
+}
+
+
+/*@media (min-width: 768px) {
+	.navbar h1 {
+		margin-bottom: 0;
+	}
+
+	#address {
+		color: #fff;
+		text-align: center;
+		font-size: 33px;
+		font-family: 'Montserrat';
+		font-weight: 400;
+		text-decoration: none;
+	}
+
+	#address-field {
+		display: none;
+	}
+
+	.form-control {
+		display: block;
+		width: 100%;
+		height: 76%;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-left: 23px;
+		padding-right: 23px;
+		border-right-width: 0px;
+		border-left-width: 0px;
+		font-size: 23px;
+		line-height: 1.42857143;
+		color: #6E6E6E;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		font-family: 'Montserrat';
+	}
+}
+*/
+
+@media (min-width: 1308px) {
+
+	.action-buttons {
+		position: absolute;
+		margin: 0 auto;
+		top: 86%;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 1000px;
+		height: 100px;
+	}
+
+	#food, #coffee, #drinks, #outdoors, #shops,
+	.action-buttons
+	{
+	display: block;
+	}
+
+	#interests-button {
+		display: none;
+	}
+
+	.sports-button, .culture-button, 
+	.music-button, .food-button, .happyhour-button, .coffee-button,
+	.outdoor-button, .landmarks-button, .festivals-button, .shopping-button {
+		position: absolute;
+		/* bottom: 4%; */
+		display: block;
+		width: 100px;
+		height: 100px;
+		background: rgba(216,216,216,0.7);
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 71px;
+		border: 7px solid #fff;
+	}
+
+	#locate-button {
+		left: 96%;
+	}
+	
+	.landmarks-button {
+	    left: 84%;
+	}
+
+	.outdoor-button {
+		left: 73%;
+	}
+	
+	.coffee-button {
+		left: 62%;
+	}
+	
+	.shopping-button {
+		left: 51%;
+	}
+	
+	.festivals-button {
+		left: 40%;
+	}
+	
+	.culture-button {
+		left: 29%;
+	}
+
+	.sports-button {
+	 	left: 18%;
+	}
+	
+	.music-button {
+	    left: 7%;
+	}
+	
+	.happyhour-button {
+		left: 15%;
+	}
+
+	.food-button {
+       left: 5%;
+	}
+
+	.select-blue {
+		background: #5dc0db;
+	}
+}
+
+
+@media (min-width:1920px) {
+
+	.navbar {
+		height: 7%;
+		background-color: #5dc0db;
+		margin-bottom: 0px;
+		border-bottom-width: 0px;
+	}
+
+	.navbar h1 {
+		color: #fff;
+		text-align: center;
+		font-size: 1.6em;
+		font-family: 'Montserrat';
+		font-weight: 400;
+		text-decoration: none;
+		height: 100%;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		line-height: 2.7em;
+		padding-top: 0px;
+	}
+
+	.address-dropdown {
+		padding-left: 1%;
+		font-size: 1.1em;
+		color: #b1ddeb;
+	}
+
+	.action-buttons {
+		position: absolute;
+		margin: 0 auto;
+		top: 86%;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 1000px;
+		height: 100px;
+	}
+
+	#interests-button {
+		display: none;
+	}
+
+	.btn-int {
+		display: block;
+	}
+
+	.culture-button, .sports-button,
+	.music-button, .food-button, .happyhour-button, .coffee-button,
+	.outdoor-button, .landmarks-button, .festivals-button, .shopping-button {
+		position: absolute;
+		/* bottom: 4%; */
+		display: block;
+		width: 100px;
+		height: 100px;
+		background: rgba(216,216,216,0.7);
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 71px;
+		border: 7px solid #fff;
+	}
+
+
+	#locate-button {
+		left: 96%;
+	}
+	
+	.landmarks-button {
+	    left: 84%;
+	}
+
+	.outdoor-button {
+		left: 73%;
+	}
+	
+	.coffee-button {
+		left: 62%;
+	}
+	
+	.shopping-button {
+		left: 51%;
+	}
+	
+	.festivals-button {
+		left: 40%;
+	}
+	
+	.culture-button {
+		left: 29%;
+	}
+
+	.sports-button {
+	 	left: 18%;
+	}
+	
+	.music-button {
+	    left: 7%;
+	}
+	
+	.happyhour-button {
+		left: -4%;
+	}
+
+	.food-button {
+       left: -15%;
+	}
+
+
+	.select-blue {
+		background: #5dc0db;
+	}
+}
+
+
+/*/*/*/*/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* STYLES GO HERE */
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* STYLES GO HERE */
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* STYLES GO HERE */
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (-webkit-min-device-pixel-ratio : 2){
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2){
+ STYLES GO HERE 
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+/* STYLES GO HERE */
+}
+
+/* iPhone 6 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (-webkit-min-device-pixel-ratio : 2){
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 6 (landscape)----------- */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2){
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 6 (portrait)----------- */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2){
+/* STYLES GO HERE */
+}
+
+/* iPhone 6 plus (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (-webkit-min-device-pixel-ratio : 3){
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 6 plus (landscape)----------- */
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 3){
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 6 plus (portrait)----------- */
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 3){
+/* STYLES GO HERE */
+}*/*/*/*/
