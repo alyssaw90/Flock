@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+body { margin:0; padding:0; }
+#map { position:absolute; top:100px; bottom:0; width:100%; }
+.navbar {
+	height: 7%;
+	background-color: #5dc0db;
+	margin-bottom: 0px;
+}
+
+
+.navbar h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 1.7em;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	text-decoration: none;
+	height: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	line-height: 2.7em;
+	padding-top: 0.5%;
+}
+
+
+.navbar a:hover {
+	text-decoration: none;
+}
+
+.navbar a:visited {
+	text-decoration: none;
+}
+
+
+.address-dropdown {
+	padding-left: 2%;
+	font-size: 1.1em;
+	color: #b1ddeb;
+}
+
+#food, #coffee, #drinks, #outdoors, #shops,
+.action-buttons
+{
+	display: none;
+}
+
+#food {
+	background-image: url('img/burger-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#drinks {
+	background-image: url('img/happyhour-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#coffee {
+	background-image: url('img/coffee-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#shops {
+	background-image: url('img/shopping-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#outdoors {
+	background-image: url('img/outdoors-icon.png');
+	background-reapeat: no-repeat;
+	background-size: 100%;
+}
+
+@media (min-width: 1308px) {
+
+	.action-buttons {
+		position: absolute;
+		margin: 0 auto;
+		top: 86%;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 1000px;
+		height: 100px;
+	}
+
+	#food, #coffee, #drinks, #outdoors, #shops,
+	.action-buttons
+	{
+	display: block;
+	}
+
+	#interests-button {
+		display: none;
+	}
+
+	.sports-button, .culture-button, 
+	.music-button, .food-button, .happyhour-button, .coffee-button,
+	.outdoor-button, .landmarks-button, .festivals-button, .shopping-button {
+		position: absolute;
+		/* bottom: 4%; */
+		display: block;
+		width: 100px;
+		height: 100px;
+		background: rgba(216,216,216,0.7);
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 71px;
+		border: 7px solid #fff;
+	}
+
+	#locate-button {
+		left: 96%;
+	}
+	
+	.landmarks-button {
+	    left: 84%;
+	}
+
+	.outdoor-button {
+		left: 73%;
+	}
+	
+	.coffee-button {
+		left: 62%;
+	}
+	
+	.shopping-button {
+		left: 51%;
+	}
+	
+	.festivals-button {
+		left: 40%;
+	}
+	
+	.culture-button {
+		left: 29%;
+	}
+
+	.sports-button {
+	 	left: 18%;
+	}
+	
+	.music-button {
+	    left: 7%;
+	}
+	
+	.happyhour-button {
+		left: 15%;
+	}
+
+	.food-button {
+       left: 5%;
+	}
+
+	.select-blue {
+		background: #5dc0db;
+	}
+}

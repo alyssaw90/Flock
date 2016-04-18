@@ -1,0 +1,654 @@
+﻿@-ms-viewport{
+  width: device-width;
+}
+
+
+
+
+/* Signin Pace  */
+
+.signin {
+	top:125px; 
+	margin:auto; 
+	position:relative;
+	width:304px; 
+	height:auto;	
+
+}
+
+.whitelogo {
+	height:auto; 
+	width:304;
+
+}
+
+.facebookbutton {
+	padding-top:70px; 
+	margin:auto; 
+	position:relative; 
+	width:200px;
+}
+
+
+.signinvideo {
+	position: absolute;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+    opacity: .7;
+    }
+    
+	
+.signinbutton {
+	height:40px; 
+	border:0px; 
+	background-color:#627AAD; 
+	color:white; 
+	font:28px; 
+	height:45px; 
+	width:200px;
+	 -moz-border-radius: 15px;
+ 	 -webkit-border-radius: 15px;
+  	border: 5px solid #627AAD;
+  	padding: 5px;
+}
+	
+
+
+
+
+/* Interest Page */
+
+
+
+/* Unselectable + Cursor Type */
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor:default;	
+}
+
+
+/* Top Blue Banner */
+
+
+.banner {
+    list-style-type: none;
+    height: 65px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5dc0db;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+.backbutton {
+	position: absolute;
+	float: right;
+	width: 16px;
+	height: 20px;
+	top:22px;
+	right:30px;
+}
+
+.backleft {
+	position: absolute;
+	float: right;
+	width: 16px;
+	height: 20px;
+	top:22px;
+	left:30px;
+}
+
+
+/* Title and Select/ Deselect All */
+
+.heading{
+	color:#5dc0db;
+	font-size: 17px;
+	text-align: center;
+	padding-top: 20px;
+	line-height: 20px;
+}
+
+
+.showselect {
+	color:#b8b8b8;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 22px;
+    letter-spacing: 1px;
+    width: 240px;
+    margin:auto;
+}
+
+.hideselect {
+	color:#b8b8b8;
+	font-size: 0px;
+	text-align: center;
+	padding-top: 0px;
+    letter-spacing: 0px;
+    width: 0px;
+    margin:auto;
+
+	
+}
+
+
+/* Interest Icons */
+
+.subtext{
+	color:#5dc0db;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 14px;
+	width: 100px;
+}
+
+
+.interest{
+	width: 100px;
+	float: left;
+}
+
+
+.circle {
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	background: #e0e0e0;
+	border:5px #e0e0e0 solid;
+}
+
+  
+.selected {
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	background: #e0e0e0;
+	border:5px #5dc0db solid;
+}
+
+
+.happyhouricon {
+	position: relative; 
+	top:21px; 
+	display:block; 
+	margin:auto; 
+	height: 50px; 
+	width: 40px;
+} 
+
+
+.foodicon {
+	position:relative; 
+	top:22px; 
+	display:block; 
+	margin:auto; 
+	height: 45px; 
+	width: 45px;
+    
+}
+
+
+.musicicon {
+	position:relative; 
+	top:20px; 
+	display:block; 
+	margin:auto; 
+	height: 50px; 
+	width: 50px;
+}
+
+
+.sportsicon {
+	position:relative; 
+	top:20px; 
+	display:block; 
+	margin:auto; 
+	height: 50px; 
+	width: 50px;
+}
+
+
+
+/* Subpage LARGE SCREEN */
+
+
+
+/* Top Blue Banner */
+
+.subbanner {
+    list-style-type: none;
+    height: 65px;
+    margin: 0;
+    padding: 22px;
+    overflow: hidden;
+    background-color: #5dc0db;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+/* Image  */
+
+.subimage {
+	width: 100%;
+	min-width: 250px;
+	height:300px;
+	margin: auto;
+	background-image: url('img/BallardPizza.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: center; 
+}​
+
+
+
+.info {
+	width: 400px; 
+	margin:auto;
+	height: 1000px;
+
+
+	
+}
+
+.subtitle {
+	color: #818181;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top: 40px;
+	margin:auto;
+	width: 400px; 
+
+	
+	
+}
+
+.clock {
+	color: #818181;
+	padding-top: 10px;
+	float: left;
+	margin:auto;
+	width: 50px; 
+
+}
+
+
+.open {
+	color: #818181;
+	padding-left: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 400px; 
+
+
+
+}
+
+.timediv{
+	margin:auto; 
+	height:60px; 
+	top:75px; 
+	position:relative;
+	width: 400px; 
+
+}
+
+
+.time {
+	color: #d4d4d4;
+	padding-left: 50px;
+	font-size: 20px;
+	line-height: 3px;
+	width: 400px; 
+
+
+}
+
+.pin {
+	color: #818181;
+	padding-top: 10px;
+	padding-left: 5px;
+	float: left;
+	width: 50px; 
+
+}
+
+.locationdiv{
+	margin:auto; 
+	height:60px; 
+	top:90px; 
+	position:relative;
+	width: 400px; 
+
+}
+
+.location {
+	color: #818181;
+	padding-left: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 400px; 
+
+
+
+}
+.address {
+	color: #d4d4d4;
+	padding-left: 50px;
+	font-size: 20px;
+	line-height: 3px;
+	width: 400px; 
+
+
+}
+
+
+
+
+
+
+
+/* Subpage SMALL SCREEN */
+
+@media (max-width: 600px) {
+
+
+
+/* Top Blue Banner */
+
+.subbanner {
+    list-style-type: none;
+    height: 65px;
+    margin: 0;
+    padding: 22px;
+    overflow: hidden;
+    background-color: #5dc0db;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+/* Image  */
+
+.subimage {
+	width: 100%;
+	height:300px;
+	margin: auto;
+	background-image: url('img/BallardPizza.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: center; 
+
+}​
+
+
+
+.info {
+	margin:0px;
+	width: 400px; 
+
+}
+
+.subtitle {
+	color: #818181;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top: 25px;
+	left: 50px;
+	margin: 0px;
+	width: 400px; 
+
+	
+	
+}
+
+.clock {
+	color: #818181;
+	padding-top: 10px;
+	padding-left: 50px;
+	float: left;
+	margin: 0px;
+	width: 50px; 
+
+}
+
+
+.open {
+	color: #818181;
+	padding-left: 100px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 400px; 
+
+}
+
+.timediv{ 
+	height:60px; 
+	top:50px; 
+	position:relative;
+	margin: 0px;
+	width: 400px; 
+}
+
+
+.time {
+	color: #d4d4d4;
+	padding-left: 100px;
+	font-size: 20px;
+	line-height: 3px;
+	width: 400px; 
+
+}
+
+.pin {
+	color: #818181;
+	padding-top: 10px;
+	padding-left: 55px;
+	float: left;
+	width: 50px;
+  
+}
+
+.locationdiv{
+	height:60px; 
+	top:60px; 
+	position:relative;
+	margin: 0px;
+	width: 400px; 
+}
+
+
+.location {
+	color: #818181;
+	padding-left: 100px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 400px; 
+
+
+}
+
+.address {
+	color: #d4d4d4;
+	padding-left: 100px;
+	font-size: 20px;
+	line-height: 3px;
+	width: 400px; 
+
+}
+
+
+}
+
+
+/* Subpage SMALLEST SCREEN  */
+
+@media (max-width: 360px) {
+
+/* Top Blue Banner */
+
+.subbanner {
+    list-style-type: none;
+    height: 65px;
+    margin: 0;
+    padding: 22px;
+    overflow: hidden;
+    background-color: #5dc0db;
+    font-size: 16px;
+    color: white;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+
+/* Image  */
+
+.subimage {
+	width: 100%;
+	min-width: 250px;
+	height:300px;
+	margin: auto;
+	background-image: url('img/BallardPizza.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: center; 
+}​
+
+
+
+.info {
+	width: 400px; 
+	margin:auto;
+	height: 1000px;
+
+
+	
+}
+
+.subtitle {
+	color: #818181;
+	font-size: 16px;
+	font-weight: bold;
+	position: relative;
+	top: 40px;
+	margin:auto;
+	width: 400px; 
+
+	
+	
+}
+
+.clock {
+	color: #818181;
+	padding-top: 10px;
+	width: 20px; 
+	margin: auto;
+
+
+}
+
+
+.open {
+	color: #818181;
+	padding-left: 90px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 400px; 
+
+
+
+}
+
+.timediv{
+	margin:auto; 
+	height:60px; 
+	top:60px; 
+	position:relative;
+	width: 400px; 
+
+}
+
+
+.time {
+	color: #d4d4d4;
+	padding-left: 90px;
+	font-size: 16px;
+	line-height: 3px;
+	width: 400px; 
+
+
+}
+
+.pin {
+	color: #818181;
+	padding-top: 10px;
+	padding-left: 55px;
+	float: left;
+	width: 20px; 
+ 
+
+}
+
+.locationdiv{
+	margin:auto; 
+	height:60px; 
+	top:65px; 
+	position:relative;
+	width: 400px; 
+
+}
+
+.location {
+	color: #818181;
+	padding-left: 90px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 400px; 
+
+
+
+}
+.address {
+	color: #d4d4d4;
+	padding-left: 90px;
+	font-size: 16px;
+	line-height: 3px;
+	width: 400px; 
+
+
+}
+
+
+
+}
