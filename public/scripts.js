@@ -5,7 +5,8 @@ $(function(){
         drinks:{title:'Drinks','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#0c0c2a'},
         coffee:{title:'Coffee','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#69675b'},
         outdoors:{title:'Outdoors','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#80a852'},
-        shops:{title:'Shopping','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#f15a22'}
+        shops:{title:'Shopping','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#f15a22'},
+        here:{title:'You are here','marker-size': 'large','marker-symbol': 'star','marker-color': '#f00'}
     }
     getLocation()
 
@@ -23,11 +24,14 @@ $(function(){
             $("#id").html("Geolocation not supported on this device")
         }
     }
+
     function initMap(lat, long){
         L.mapbox.accessToken = 'pk.eyJ1IjoidG9kZGJlc3QyMDA0IiwiYSI6ImNpbXhra2JsZjAzanh1d200aDB0cmI1Z3oifQ.ZVQ1Gg1zsOnYvud8rv4shA';
         map = L.mapbox.map('map', 'mapbox.streets')
           .setView([lat, long], 14);
-
+        L.marker([lat, long], {
+            icon: L.mapbox.marker.icon(icons['here'])
+        }).addTo(map);  
         
     }
 
