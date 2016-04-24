@@ -23,9 +23,8 @@ router.get('/search', function(req, res){
 	}
 	var ll = req.query.ll
 	var type = req.query.type
-	var url = "https://api.foursquare.com/v2/venues/explore"
-	request({
-		url:url,
+	var requestObject = {
+		url:"https://api.foursquare.com/v2/venues/explore",
 		qs: {
 			ll:ll,
 			section: type,
@@ -35,10 +34,46 @@ router.get('/search', function(req, res){
 			radius: 1000, //radius in meters
 			openNow: 0 //1: only show open, 0: show all
 		}
-	}, function(error, response, body){
-		var results = JSON.parse(body).response.groups[0].items
-		res.json({count:results.length,results:results})
-	})
+	}
+	foursquare(requestObject, res)
+})
+
+// 
+
+router.get('/seatgeek', function(req, res){
+	var now = new Date()
+	var dtstart = new Date(now.getTime()+(30*60*1000))
+	var dtend = new Date(now.getTime()+(24*60*60*1000))
+
+	var ll = req.query.ll
+
+	var requestObject = {
+		url: "https://api.seatgeek.com/2/events",
+		qs:{
+			lat: 47.6762633,
+			lon: -122.31862819,
+			type: 'comedy',
+			range: '10mi',
+			'datetime_utc.gte': dtstart.toISOString(),
+			'datetime_utc.lte': dtend.toISOString()
+		}
+	}
+	seatgeek(requestObject,res)
+	// res.send(dtstart.toISOString())
 })
 
 module.exports = router;
+
+function foursquare(requestObject, res){
+	request(requestObject, function(error, response, body){
+		var results = JSON.parse(body).response.groups[0].items
+		res.json({count:results.length,results:results})
+	})
+}
+
+function seatgeek(requestObject, res){
+	request(requestObject, function(error, response, body){
+		var results = JSON.parse(body)
+		res.json({count:results.length,results:results})
+	})
+}
