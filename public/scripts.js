@@ -60,7 +60,24 @@ $(function(){
             search('outdoors')
         }
     })
-
+    $("#cultural").click(function(){
+        if(myLat&&myLong){
+            sg('concert')
+            sg('theater')
+            sg('classical')
+            sg('classical_opera')
+            sg('classical_vocal')
+            sg('classical_orchestral_instrumental')
+            sg('cirque_du_soleil')
+            sg('broadway_tickets_national')
+            sg('comedy')
+            sg('family')
+            sg('dance_performance_tour')
+            sg('film')
+            sg('literary')
+            sg('circus')
+        }
+    })
 
     function search(type){
         $.get({
@@ -74,20 +91,37 @@ $(function(){
         })
     }
 
+    function sg(type){
+        $.get({
+            url: '/api/sg',
+            data:{
+                ll: myLat+","+myLong,
+                type: type
+            }
+        }).done(function(response){
+            addMarkers(response.results, type)
+        })
+    }
+
     function addMarkers(results, type){
         if(results&&results.length){
-            var geoJson={
-                type:'FeatureCollection',
-                features:[]
-            }
-            for(var i=0;i<results.length;i++){
-                var venue = results[i].venue
-                var lat = venue.location.lat
-                var lng = venue.location.lng
-                L.marker([lat, lng], {
-                    icon: L.mapbox.marker.icon(icons[type])
-                }).addTo(map);
-            }
+            // var geoJson={
+            //     type:'FeatureCollection',
+            //     features:[]
+            // }
+            results.forEach(function(result){
+                addMarker(result, type)
+            })
         }
+    }
+
+    function addMarker(result, type){
+        L.marker([result.lat, result.lon], {
+            icon: L.mapbox.marker.icon(icons[type])
+        }).addTo(map).on('click', function(e){
+            //Here, we can do whatever we need with result
+            //to show details, populate pop-up, whatever
+            console.log(result)
+        });
     }
 })
