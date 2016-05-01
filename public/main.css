@@ -86,6 +86,11 @@ body { margin:0; padding:0; }
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+#cultural {
+	background-image: url('img/culture-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
 
 .locate-button,
 .interests-button {
@@ -137,7 +142,7 @@ body { margin:0; padding:0; }
 		height: 100px;
 	}
 
-	#food, #coffee, #drinks, #outdoors, #shops,
+	#food, #coffee, #drinks, #outdoors, #shops,#cultural,
 	.action-buttons
 	{
 	display: block;
