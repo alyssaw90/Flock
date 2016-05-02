@@ -7,8 +7,29 @@ app.use(express.static(path.join(__dirname, 'public')))
 var apiCtrl = require("./api/")
 app.use("/api", apiCtrl)
 
-app.get('/*', function(req,res){
+app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname, 'public/index.html'))
+})
+
+app.post('/login', function(req, res){
+	//setup user session, redirect to map
+	res.redirect('/map')
+})
+
+app.post('/register', funciton(req, res){
+	//create user, redirect to login
+	res.redirect('/')
+	//or autologin and redirect to map
+	//res.redirect('/map')
+})
+
+app.get('/map', function(req,res){
+	//validate usersession here
+	res.sendFile(path.join(__dirname, 'public/map.html'))
+})
+
+app.get('/details/:id', function(req, res){
+	//show subpage
 })
 
 // var port = process.env.PORT || 3000;
