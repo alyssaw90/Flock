@@ -17,3 +17,4 @@ app.get('/*', function(req,res){
 // app.listen(port, serverip);
 // console.log('Server running at '+serverip+":"+port);
 app.listen(process.env.PORT || 3000)
+console.log('Server Running')
