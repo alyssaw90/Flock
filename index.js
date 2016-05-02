@@ -1,6 +1,8 @@
 var express = require('express')
 var path = require('path');
 var app = express()
+var Firebase = require("firebase");
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -11,10 +13,9 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname, 'static/index.html'))
 })
 
-app.post('/login', function(req, res){
-	//setup user session, redirect to map
-	res.redirect('/map')
-})
+// app.post('/login', function(req, res){
+// 	//setup user session, redirect to map
+// })
 
 app.post('/register', function(req, res){
 	//create user, redirect to login

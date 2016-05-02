@@ -18,6 +18,7 @@
   "homepage": "https://github.com/toddbest2004/Flock",
   "dependencies": {
     "express": "^4.13.4",
+    "firebase": "^2.4.2",
     "request": "^2.70.0"
   }
 }

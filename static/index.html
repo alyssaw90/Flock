@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flock</title>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="main.css" />
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	<!-- Firebase Simple Login -->
+	<script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
+</head>
+<body>
+	<a href="#" class="btn btn-lg btn-primary btn-block" onclick="login();">Facebook</a>	
+</body>
+<script>
+	function login() {
+		var ref = new Firebase("https://flockwithme.firebaseio.com");
+         ref.authWithOAuthPopup("facebook", function(error, authData) {
+             if (error) {
+                 console.log("Login Failed!", error);
+             } else {
+             	window.location.href = 'map' 
+                 // console.log("Authenticated successfully with payload:", authData);
+             }
+         },
+         	{
+         		remember: "sessionOnly",
+  				scope: "email,user_likes"
+         	}
+         );
+	}
+</script>
+</html>
