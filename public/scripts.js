@@ -1,7 +1,17 @@
 $(function(){
     var map, myLayer, myLat, myLong
     var icons = {
-        food:{title:'Food','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#fa0'},
+        // food:{title:'Food','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#fa0'},
+        food: {
+                title:'Food',
+                properties: {
+                    icon: {
+                        iconUrl: '/img/Food.png',
+                        iconSize: [50,50],
+                        iconAnchor: [25,25]
+                    }
+                }
+            },
         drinks:{title:'Drinks','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#0c0c2a'},
         coffee:{title:'Coffee','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#69675b'},
         outdoors:{title:'Outdoors','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#80a852'},
@@ -105,12 +115,9 @@ $(function(){
 
     function addMarkers(results, type){
         if(results&&results.length){
-            // var geoJson={
-            //     type:'FeatureCollection',
-            //     features:[]
-            // }
             results.forEach(function(result){
                 addMarker(result, type)
+                // console.log(type)
             })
         }
     }
@@ -122,6 +129,7 @@ $(function(){
             //Here, we can do whatever we need with result
             //to show details, populate pop-up, whatever
             console.log(result)
+            console.log(icons[type])
         });
     }
 })

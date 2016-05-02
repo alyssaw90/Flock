@@ -22,7 +22,7 @@ router.get('/search', function(req, res){
 		return res.status(400).json({error:"Invalid search type."})
 	}
 	var ll = req.query.ll
-	console.log(ll)
+	// console.log(ll)
 	var type = req.query.type
 	var requestObject = {
 		url:"https://api.foursquare.com/v2/venues/explore",
