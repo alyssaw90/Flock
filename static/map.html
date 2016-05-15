@@ -8,18 +8,20 @@
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="Flock.css">
 	<link rel="stylesheet" href="main.css" />
 	<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 	<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 	<script src='/scripts.js'></script>
 	<script src="/show.js"></script>
+	<!-- <script src="/interest-mobile.js"></script> -->
 	<style>
 	  
 	</style>
 </head>
 <body>
-
+<div class="map-section">
 <div class="navbar navbar-default navbar-fixed-top" role="navigation"> 
 		<a href="#" onclick="toggle_visibility('address-field');">
 			<h1 id="#">905 NE 66th St<i href="#" class="fa fa-chevron-circle-down address-dropdown"></i></h1>
@@ -31,13 +33,166 @@
 <div id="map">Loading Map</div>
 <div class="action-buttons">
 	<button class="interests-button" id="interests"></button>
-	<button class="locate-button" id="locate"></button>
 	<button class="food-button" id="food"></button>
 	<button class="happyhour-button" id="drinks"></button>
+	<button class="music-button" id="music"></button>
+	<button class="sports-button" id="sports"></button>
 	<button class="culture-button" id="cultural"></button>
-	<button class="coffee-button" id="coffee"></button>
+	<button class="festival-button" id="festival"></button>
 	<button class="shopping-button" id="shops"></button>
+	<button class="coffee-button" id="coffee"></button>
 	<button class="outdoor-button" id="outdoors"></button>
+	<button class="landmarks-button" id="landmarks"></button>
+	<button class="locate-button" id="locate"></button>
+
+</div>
+</div>
+<div class="mobile-interests">
+	<!-- Blue Banner -->
+	<div class="banner">
+		<a href="#">
+		<img class="backbutton" src="img/back.png"/>
+		</a>
+		<p style="margin-top: 20px;">
+			<b class="unselectable">Interests</b>
+		</p>
+	</div>
+
+	<!-- Title -->
+	<div style=" margin:auto; width: 240px;">
+		<p class="heading">
+			<b class="unselectable">Select interests you want to see on your map</b>
+		</p>
+	</div>
+	
+	<!-- "Select All" -->
+	<div>
+		<p class="showselect" id="selectall">
+			<b class="unselectable">Select All</b>
+		</p>	
+	</div>
+	
+	<!-- "Deselect All" -->	
+	<div>
+		<p class="hideselect" id="deselect">
+			<b class="unselectable">Unselect All</b>
+		</p>	
+	</div>
+
+	
+	
+	<!-- Interests -->
+	
+	<!-- Block 1 -->
+	<div style="margin: auto; width: 255px; height: 162px;">
+	
+		<!-- "Happy Hour" -->
+		<div class="interest">
+			<div style="width:100px;" class="circle"><img class="foodicon unselectable" src="img/burger.png"/></div>
+			<p class="subtext">
+				<b>Food</b>
+			</p>
+
+		</div>
+		
+		<!-- "Food" -->
+		<div style="padding-left:55px;"class="interest">
+			<div style="width:100px;" class="circle"><img class="happyhouricon unselectable" src="img/Happy.png"/></div>
+			<p class="subtext">
+				<b>Happy Hour</b>
+			</p>
+
+		</div>
+	</div>
+
+	<!-- Block 2 -->
+	<div style="margin: auto; width: 255px; height: 162px;">
+	
+		<!-- "Music" -->
+		<div class="interest">
+			<div style="width:100px;" class="circle"><img class="musicicon unselectable" src="img/Music.png"/></div>
+				<p class="subtext">
+					<b>Music</b>
+				</p>
+		</div>
+		
+	
+		<!-- "Sports" -->
+		<div style="padding-left:55px;"class="interest">
+			<div style="width:100px;" class="circle"><img class="sportsicon unselectable" src="img/sports.png"/></div>
+				<p class="subtext">
+					<b>Sports</b>
+				</p>
+
+		</div>		
+	</div>
+	
+	<!-- Block 3 -->	
+	<div style="margin: auto; width: 255px; height: 162px;">
+	
+		<!-- "Culture" -->	
+
+		<div class="interest">
+			<div style="width:100px;" class="circle"><img class="unselectable" style="position:relative; top:22px; display:block; margin:auto; height: 50px; width: 50px;" src="img/Culture.png"/></div>
+				<p class="subtext">
+					<b>Culture</b>
+				</p>
+		</div>
+		
+		<!-- "Festivals" -->
+		<div style="padding-left:55px;"class="interest">
+			<div style="width:100px;" class="circle"><img class="unselectable" style="position:relative; padding-left:3px; top:20px; display:block; margin:auto; height: 53px; width: 53px;" src="img/festival.png"/></div>
+				<p class="subtext">
+					<b>Festivals</b>
+				</p>
+
+		</div>
+
+	</div>
+	
+	<!-- Block 4 -->	
+	<div style="margin: auto; width: 255px; height: 162px;">
+	
+
+		<!-- "Shopping" -->	
+		<div class="interest">
+			<div style="width:100px;" class="circle food"><img class="unselectable" style="position:relative; top:22px; display:block; margin:auto; height: 55px; width: 55px;" src="img/shopping.png"/></div>
+				<p class="subtext">
+					<b>Shopping</b>
+				</p>
+		</div>
+	
+		<!-- "Coffee" -->	
+		<div style="padding-left:55px;"class="interest">
+			<div style="width:100px;" class="circle"><img class="unselectable" style="position:relative; top:22px; display:block; margin:auto; height: 50px; width: 50px;" src="img/Coffee2.png"/></div>
+				<p class="subtext">
+					<b>Coffee</b>
+				</p>
+		</div>
+	</div>
+
+
+	
+	<!-- Block 5 -->	
+	<div style="margin: auto; width: 255px; height: 162px;">
+		<!-- "Outdoors" -->	
+		<div class="interest">
+			<div style="width:100px;" class="circle" id="outdoors"><img class="unselectable" style="position:relative; top:17px; display:block; margin:auto; height: 50px; width: 50px;" src="img/outdoors.png"/></div>
+				<p class="subtext">
+					<b>Outdoors</b>
+				</p>
+
+
+		</div>
+	
+		<!-- "Landmarks" -->		
+		<div style="padding-left:55px;"class="interest">
+			<div style="width:100px;" class="circle"><img class="unselectable" style="position:relative; padding-left:1px; top:17px; display:block; margin:auto; height: 55px; width: 55px;" src="img/landmark.png"/></div>
+				<p class="subtext">
+					<b>Landmarks</b>
+				</p>
+		</div>
+	</div>
 </div>
 </body>
 </html>

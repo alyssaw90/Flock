@@ -40,7 +40,7 @@ body { margin:0; padding:0; }
 	color: #b1ddeb;
 }
 
-#food, #coffee, #drinks, #outdoors, #shops
+#food, #coffee, #drinks, #outdoors, #shops, #music, #sports, #festival, #landmarks, #cultural
 {
 	display: none;
 }
@@ -71,7 +71,7 @@ body { margin:0; padding:0; }
 
 #outdoors {
 	background-image: url('img/outdoors-icon.png');
-	background-reapeat: no-repeat;
+	background-repeat: no-repeat;
 	background-size: 100%;
 }
 
@@ -91,11 +91,30 @@ body { margin:0; padding:0; }
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-
+#festival {
+	background-image: url('img/festival-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#landmarks {
+	background-image: url('img/landmark-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#sports {
+	background-image: url('img/sports-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#music {
+	background-image: url('img/music-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
 .locate-button,
 .interests-button {
 	position: absolute;
-	display: block;
+	// display: block;
 	width: 100px;
 	height: 100px;
 	background: #fff;
@@ -105,31 +124,37 @@ body { margin:0; padding:0; }
 	border: 10px solid rgba(216,216,216,1.0);
 }
 
-	.action-buttons {
-		position: absolute;
-		margin: 0 auto;
-		top: 80%;
-		left: 0px;
-		right: 0px;
-		bottom: 0px;
-		width: 1000px;
-		height: 100px;
-	}
+.action-buttons {
+	position: absolute;
+	margin: 0 auto;
+	top: 80%;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 1000px;
+	height: 100px;
+}
 .locate-button {
-		left: 30%;
-		right: 0;
-	}
+	left: 60%;
+}
 
 .interests-button {
-	left: 0;
-	right: 30%;
+	left: 30%;
+}
+
+.mobile-interests {
+	display: none;
 }
 
 @media (min-width: 1308px) {
 
+	.mobile-interests {
+		display: none;
+	}
+
 	.interests-button {
-	display: none;
-}
+		display: none;
+	}
 
 	.action-buttons {
 		position: absolute;
@@ -142,10 +167,10 @@ body { margin:0; padding:0; }
 		height: 100px;
 	}
 
-	#food, #coffee, #drinks, #outdoors, #shops,#cultural,
-	.action-buttons
+	#food, #coffee, #drinks, #outdoors, #shops,#cultural,#music, #sports,#landmarks,
+	.action-buttons,#festival
 	{
-	display: block;
+		display: block;
 	}
 
 	#interests-button {
@@ -154,7 +179,7 @@ body { margin:0; padding:0; }
 
 	.sports-button, .culture-button, 
 	.music-button, .food-button, .happyhour-button, .coffee-button,
-	.outdoor-button, .landmarks-button, .festivals-button, .shopping-button {
+	.outdoor-button, .landmarks-button, .festival-button, .shopping-button {
 		position: absolute;
 		/* bottom: 4%; */
 		display: block;
@@ -168,50 +193,51 @@ body { margin:0; padding:0; }
 	}
 
 	.locate-button {
-		left: 96%;
+		left: 100%;
 	}
 	
 	.landmarks-button {
-	    left: 84%;
+		left: 89%;
 	}
 
 	.outdoor-button {
-		left: 73%;
+		left: 78%;
 	}
 	
 	.coffee-button {
-		left: 62%;
+		left: 45%;
 	}
 	
 	.shopping-button {
-		left: 51%;
+		left: 56%;
 	}
 	
-	.festivals-button {
-		left: 40%;
+	.festival-button {
+		left: 67%;
 	}
 	
 	.culture-button {
-		left: 29%;
+		left: 34%;
 	}
 
 	.sports-button {
-	 	left: 18%;
+		left: 23%;
 	}
 	
 	.music-button {
-	    left: 7%;
+		left: 12%;
 	}
 	
 	.happyhour-button {
-		left: 15%;
+		left: 1%;
 	}
 
 	.food-button {
-       left: 5%;
-	}
+       // left: 5%;
+       left:-10%;
+   }
 
-	.select-blue {
-		background: #5dc0db;
-	}
+   .select-blue {
+   	background: #5dc0db;
+   }
 }
