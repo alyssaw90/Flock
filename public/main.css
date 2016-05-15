@@ -40,7 +40,7 @@ body { margin:0; padding:0; }
 	color: #b1ddeb;
 }
 
-#food, #coffee, #drinks, #outdoors, #shops
+#food, #coffee, #drinks, #outdoors, #shops, #music, #sports, #festival, #landmarks, #cultural
 {
 	display: none;
 }
@@ -114,7 +114,7 @@ body { margin:0; padding:0; }
 .locate-button,
 .interests-button {
 	position: absolute;
-	display: block;
+	// display: block;
 	width: 100px;
 	height: 100px;
 	background: #fff;
@@ -135,13 +135,11 @@ body { margin:0; padding:0; }
 		height: 100px;
 	}
 .locate-button {
-		left: 30%;
-		right: 0;
-	}
+	left: 60%;
+}
 
 .interests-button {
-	left: 0;
-	right: 30%;
+	left: 30%;
 }
 
 @media (min-width: 1308px) {
@@ -161,8 +159,8 @@ body { margin:0; padding:0; }
 		height: 100px;
 	}
 
-	#food, #coffee, #drinks, #outdoors, #shops,#cultural,
-	.action-buttons
+	#food, #coffee, #drinks, #outdoors, #shops,#cultural,#music, #sports,#landmarks,
+	.action-buttons,#festival
 	{
 	display: block;
 	}
