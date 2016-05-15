@@ -2,6 +2,11 @@ var express = require("express");
 var router = express.Router();
 var request = require("request");
 
+var Firebase = require("firebase")
+var rootRef = new Firebase(process.env.FIREBASE_URL)
+rootRef.authWithCustomToken(process.env.FIREBASE_TOKEN, function(error, authData) {
+})
+
 var validSearchTypes = ['food','drinks','coffee','shops','outdoors']
 
 /*
@@ -27,7 +32,7 @@ router.get('/search', function(req, res){
 	var requestObject = {
 		url:"https://api.foursquare.com/v2/venues/explore",
 		qs: {
-			ll:ll,
+			ll:'47.676402,-122.317612',//ll,
 			section: type,
 			client_id:process.env.FOURSQUARE_CLIENT_ID,
 			client_secret:process.env.FOURSQUARE_CLIENT_SECRET,
@@ -36,7 +41,11 @@ router.get('/search', function(req, res){
 			openNow: 0 //1: only show open, 0: show all
 		}
 	}
-	foursquare(requestObject, res)
+	if(type==='drinks'){
+		filterHappyHour(requestObject, res)
+	}else{
+		foursquare(requestObject, res)
+	}
 })
 
 // 
@@ -78,8 +87,11 @@ module.exports = router;
 
 function foursquare(requestObject, res){
 	request(requestObject, function(error, response, body){
-		var results = JSON.parse(body).response.groups[0].items
-		// console.log(results[0])
+		var results = JSON.parse(body).response
+		if(!results.groups){
+			return res.json({count:0,results:[]})
+		}
+		results=results.groups[0].items
 		var newResults = results.map(function(result){
 			var ret = {}
 			ret.type="fs"
@@ -110,5 +122,49 @@ function seatgeek(requestObject, res){
 			//no venue image, but some performance images
 		})
 		res.json({count:results.meta.total,results:newResults})
+	})
+}
+
+function filterHappyHour(requestObject, res){
+	var day = new Date().getDay()
+	var hour = new Date().getHours()
+	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
+		var filtered = []
+		snapshot.forEach(function(data){
+			var val = data.val()
+			if(val[day]){
+				var range = val[day].split('-')
+				var startHour = parseInt(range[0].split(':')[0])
+				var endHour = parseInt(range[1].split(':')[0])
+				if(endHour<startHour)
+					endHour = 24 //happy hour extends to next day, so is still active
+				if(hour>=startHour&&hour<=endHour)
+					filtered.push(data.key())
+			}
+		})
+		happyHour(requestObject, filtered, res)
+	})
+}	
+
+function happyHour(requestObject, filter, res){
+	request(requestObject, function(error, response, body){
+		var results = JSON.parse(body).response.groups[0].items
+		var newResults = results.filter(function(result){
+			var id=result.venue.id
+			if(filter.indexOf(id)!==-1)
+				return true
+			return false	
+		}).map(function(result){
+			var ret = {}
+			ret.type="fs"
+			ret.lat = result.venue.location.lat
+			ret.lon = result.venue.location.lng
+			ret.name = result.venue.name
+			ret.hours = result.venue.hours
+			ret.address = result.venue.location.address+' '+result.venue.location.city+' '+result.venue.location.state+' '+result.venue.location.postalCode
+			ret.url = result.venue.url
+			return ret
+		})
+		res.json({count:newResults.length,results:newResults})
 	})
 }
