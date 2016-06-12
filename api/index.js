@@ -32,7 +32,7 @@ router.get('/search', function(req, res){
 	var requestObject = {
 		url:"https://api.foursquare.com/v2/venues/explore",
 		qs: {
-			ll:'47.676402,-122.317612',//ll,
+			ll:ll,
 			section: type,
 			client_id:process.env.FOURSQUARE_CLIENT_ID,
 			client_secret:process.env.FOURSQUARE_CLIENT_SECRET,
