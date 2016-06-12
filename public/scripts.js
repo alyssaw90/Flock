@@ -1,5 +1,9 @@
 $(function(){
-    var map, myLayer, myLat, myLong
+    var googleKey = "AIzaSyAts9Pe6gW-RBOsCxYnZGTfX-kPJzSWfTU"
+    var map, myLayer, homeMarker, 
+        myLat, myLong, //actual coordinates of the user
+        curLat, curLong, //coordinates of any updated search
+        markers = []
     var icons = {
         food:{title:'Food','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#fa0'},
         drinks:{title:'Drinks','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#0c0c2a'},
@@ -8,6 +12,8 @@ $(function(){
         shops:{title:'Shopping','marker-size': 'large','marker-symbol': 'cafe','marker-color': '#f15a22'},
         here:{title:'You are here','marker-size': 'large','marker-symbol': 'star','marker-color': '#f00'}
     }
+
+    initMap()
     getLocation()
 
     //get current geolocation
@@ -16,7 +22,7 @@ $(function(){
             navigator.geolocation.getCurrentPosition(function success(position){
                 myLat = position.coords.latitude
                 myLong = position.coords.longitude
-                initMap(myLat, myLong)
+                setHome(myLat,myLong)
             }, function error(){
 
             })
@@ -25,43 +31,70 @@ $(function(){
         }
     }
 
-    function initMap(lat, long){
+    function initMap(){
         L.mapbox.accessToken = 'pk.eyJ1IjoidG9kZGJlc3QyMDA0IiwiYSI6ImNpbXhra2JsZjAzanh1d200aDB0cmI1Z3oifQ.ZVQ1Gg1zsOnYvud8rv4shA';
         map = L.mapbox.map('map', 'mapbox.streets')
-          .setView([lat, long], 16);
-        L.marker([lat, long], {
+    }
+
+
+    $('#search-address').click(function(){
+        var address = $('#address').val()
+        searchLocation(address)
+    })
+
+    function searchLocation(address){
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+googleKey
+        $.get({
+            url:url
+        }).done(function(res){
+            var location = res.results[0].geometry.location
+            var lat = location.lat
+            var long = location.lng
+            // initMap(lat,long)
+            setHome(lat, long)
+        })
+    }
+
+    function setHome(lat, long){
+        curLat = lat
+        curLong = long
+        clearMarkers()
+        map.setView([lat,long],16)
+        if(homeMarker){
+            map.removeLayer(homeMarker)
+        }
+        homeMarker = L.marker([lat, long], {
             icon: L.mapbox.marker.icon(icons['here'])
-        }).addTo(map);  
-        
+        }).addTo(map);
     }
 
     $("#food").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             search('food')
         }
     })
     $("#drinks").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             search('drinks')
         }
     })
     $("#coffee").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             search('coffee')
         }
     })
     $("#shops").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             search('shops')
         }
     })
     $("#outdoors").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             search('outdoors')
         }
     })
     $("#cultural").click(function(){
-        if(myLat&&myLong){
+        if(curLat&&curLong){
             sg('concert')
             sg('theater')
             sg('classical')
@@ -83,7 +116,7 @@ $(function(){
         $.get({
             url: '/api/search',
             data:{
-                ll: myLat+","+myLong,
+                ll: curLat+","+curLong,
                 type: type
             }
         }).done(function(response){
@@ -95,7 +128,7 @@ $(function(){
         $.get({
             url: '/api/sg',
             data:{
-                ll: myLat+","+myLong,
+                ll: curLat+","+curLong,
                 type: type
             }
         }).done(function(response){
@@ -116,13 +149,21 @@ $(function(){
     }
 
     function addMarker(result, type){
-        L.marker([result.lat, result.lon], {
+        var marker = L.marker([result.lat, result.lon], {
             icon: L.mapbox.marker.icon(icons[type])
         }).addTo(map).on('click', function(e){
             //Here, we can do whatever we need with result
             //to show details, populate pop-up, whatever
             console.log(result)
         });
+        markers.push(marker)
+    }
+
+    function clearMarkers(){
+        markers.forEach(function(marker){
+            map.removeLayer(marker)
+        })
+        markers=[]
     }
 
     // INTEREST MOBILE VIEW
