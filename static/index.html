@@ -15,6 +15,17 @@
 <body>
 	<a href="#" class="btn btn-lg btn-primary btn-block" onclick="login();">Facebook</a>	
 </body>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAts9Pe6gW-RBOsCxYnZGTfX-kPJzSWfTU",
+    authDomain: "flockdev.herokuapp.com",
+    databaseURL: "https://flockwithme.firebaseio.com",
+    storageBucket: "project-5351139756040842321.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
 <script>
 	function login() {
 		var ref = new Firebase("https://flockwithme.firebaseio.com");
@@ -23,7 +34,7 @@
                  console.log("Login Failed!", error);
              } else {
              	window.location.href = 'map' 
-                 // console.log("Authenticated successfully with payload:", authData);
+                console.log("Authenticated successfully with payload:", authData);
              }
          },
          	{
