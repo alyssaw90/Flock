@@ -207,4 +207,9 @@ $(function(){
         $("#deselect").addClass("hideselect");
 
     });
+
+    //LOCATE BUTTON
+    $('#locate').click(function(event){
+        setHome(myLat, myLong);
+    })
 })
