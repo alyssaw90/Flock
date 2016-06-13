@@ -4,7 +4,7 @@ $(function(){
         myLat, myLong, //actual coordinates of the user
         curLat, curLong, //coordinates of any updated search
         markers={food:[],drinks:[],shops:[],coffee:[],outdoors:[],cultural:[]}
-    
+    var popupImage;
     var icons = {
         here:{title:'You are here','marker-size': 'large','marker-symbol': 'star','marker-color': '#f00'}
     }
@@ -191,11 +191,29 @@ $(function(){
             //Here, we can do whatever we need with result
             //to show details, populate pop-up, whatever
             console.log(result);
+            console.log(type);
             // alert(result.name)
+
+
+            if (type === 'food') {
+                popupImage = '/img/burger-icon.png';
+            } else if (type === 'drinks') {
+                popupImage = '/img/happyhour-icon.png'
+            } else if (type === 'coffee') {
+                popupImage = '/img/coffee-icon.png'
+            } else if (type === 'outdoors') {
+                popupImage = '/img/outdoors-icon.png'
+            } else if (type === 'shops') {
+                popupImage = '/img/shopping-icon.png'
+            } else if (type === 'cultural') {
+                popupImage = '/img/culture-icon.png'
+            } else {
+                popupImage = '/img/Flock-logo1.png'
+            }
             swal({   
                 title: result.name,   
                 text: result.address + '\n' + result.hours.status,   
-                type: "success",  
+                imageUrl: popupImage,
                 confirmButtonText: "Cool" 
             });
         });
