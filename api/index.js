@@ -27,7 +27,6 @@ router.get('/search', function(req, res){
 		return res.status(400).json({error:"Invalid search type."})
 	}
 	var ll = req.query.ll
-	console.log(ll)
 	var type = req.query.type
 	var requestObject = {
 		url:"https://api.foursquare.com/v2/venues/explore",
@@ -42,6 +41,7 @@ router.get('/search', function(req, res){
 		}
 	}
 	if(type==='drinks'){
+		console.log("SLKJFLSKDJFLK")
 		filterHappyHour(requestObject, res)
 	}else{
 		foursquare(requestObject, res)
@@ -101,6 +101,7 @@ function foursquare(requestObject, res){
 			ret.hours = result.venue.hours
 			ret.address = result.venue.location.address+' '+result.venue.location.city+' '+result.venue.location.state+' '+result.venue.location.postalCode
 			ret.url = result.venue.url
+			ret.image = result.venue.photos
 			return ret
 		})
 		res.json({count:results.length,results:newResults})
@@ -121,7 +122,6 @@ function seatgeek(requestObject, res){
 			return ret
 			//no venue image, but some performance images
 		})
-		console.log(newResults)
 		res.json({count:results.meta.total,results:newResults})
 	})
 }
@@ -143,6 +143,7 @@ function filterHappyHour(requestObject, res){
 					filtered.push(data.key())
 			}
 		})
+		console.log(requestObject)
 		happyHour(requestObject, filtered, res)
 	})
 }	
