@@ -121,6 +121,7 @@ function seatgeek(requestObject, res){
 			return ret
 			//no venue image, but some performance images
 		})
+		console.log(newResults)
 		res.json({count:results.meta.total,results:newResults})
 	})
 }
