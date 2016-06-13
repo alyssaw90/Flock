@@ -154,7 +154,14 @@ $(function(){
         }).addTo(map).on('click', function(e){
             //Here, we can do whatever we need with result
             //to show details, populate pop-up, whatever
-            console.log(result)
+            console.log(result);
+            // alert(result.name)
+            swal({   
+                title: result.name,   
+                text: result.address + '\n' + result.hours.status,   
+                type: "success",  
+                confirmButtonText: "Cool" 
+            });
         });
         markers.push(marker)
     }

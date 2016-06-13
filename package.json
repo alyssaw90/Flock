@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "firebase": "^2.4.2",
-    "request": "^2.70.0"
+    "request": "^2.70.0",
+    "sweetalert": "^1.1.3"
   }
 }
