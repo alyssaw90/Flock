@@ -171,6 +171,8 @@ function happyHour(requestObject, filter, res){
 		})
 		console.log('--------')
 		console.log(newResults)
+		console.log('----filter----')
+		console.log(filter)
 		res.json({count:newResults.length,results:newResults})
 	})
 }
