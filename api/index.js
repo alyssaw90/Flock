@@ -132,6 +132,9 @@ function filterHappyHour(requestObject, res){
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
 		snapshot.forEach(function(data){
+			console.log('--snap--')
+			console.log(snapshot)
+			console.log('--snap--')
 			var val = data.val()
 			if(val[day]){
 				var range = val[day].split('-')
@@ -149,9 +152,7 @@ function filterHappyHour(requestObject, res){
 
 function happyHour(requestObject, filter, res){
 	request(requestObject, function(error, response, body){
-		console.log('-----')
 		var results = JSON.parse(body).response.groups[0].items
-		console.log(results)
 		var newResults = results.filter(function(result){
 			var id=result.venue.id
 			if(filter.indexOf(id)!==-1){
@@ -169,10 +170,6 @@ function happyHour(requestObject, filter, res){
 			ret.url = result.venue.url
 			return ret
 		})
-		console.log('--------')
-		console.log(newResults)
-		console.log('----filter----')
-		console.log(filter)
 		res.json({count:newResults.length,results:newResults})
 	})
 }
