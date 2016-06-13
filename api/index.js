@@ -129,16 +129,12 @@ function seatgeek(requestObject, res){
 function filterHappyHour(requestObject, res){
 	var day = new Date().getDay()
 	var hour = new Date().getHours()
-	console.log('---date---')
-	console.log(day)
-	console.log(hour)
+	if(hour===0){hour=24}
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
 		snapshot.forEach(function(data){
 			var val = data.val()
 			if(val[day]){
-				console.log(val[day])
-				var range = val[day].split('-')
 				var startHour = parseInt(range[0].split(':')[0])
 				var endHour = parseInt(range[1].split(':')[0])
 				if(endHour<startHour)
