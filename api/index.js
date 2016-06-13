@@ -41,8 +41,11 @@ router.get('/search', function(req, res){
 		}
 	}
 	if(type==='drinks'){
-		console.log("SLKJFLSKDJFLK")
-		filterHappyHour(requestObject, res)
+		var timestamp = req.query.timestamp
+		if(!timestamp){
+			return res.status(500).json({error:'no timestamp'})
+		}
+		filterHappyHour(requestObject, timestamp, res)
 	}else{
 		foursquare(requestObject, res)
 	}
@@ -126,9 +129,11 @@ function seatgeek(requestObject, res){
 	})
 }
 
-function filterHappyHour(requestObject, res){
-	var day = new Date().getDay()
-	var hour = new Date().getHours()
+function filterHappyHour(requestObject, timestamp, res){
+	var day = (new Date(timestamp)).getDay()
+	var hour = (new Date(timestamp)).getHours()
+	console.log(day)
+	console.log(hour)
 	if(hour===0){hour=24}
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
