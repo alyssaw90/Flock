@@ -149,7 +149,9 @@ function filterHappyHour(requestObject, res){
 
 function happyHour(requestObject, filter, res){
 	request(requestObject, function(error, response, body){
+		console.log('-----')
 		var results = JSON.parse(body).response.groups[0].items
+		console.log(results)
 		var newResults = results.filter(function(result){
 			var id=result.venue.id
 			if(filter.indexOf(id)!==-1){
