@@ -151,11 +151,12 @@ function filterHappyHour(requestObject, res){
 function happyHour(requestObject, filter, res){
 	request(requestObject, function(error, response, body){
 		var results = JSON.parse(body).response.groups[0].items
+		console.log(results)
 		var newResults = results.filter(function(result){
 			var id=result.venue.id
 			if(filter.indexOf(id)!==-1)
 				return true
-			return false	
+			return false
 		}).map(function(result){
 			var ret = {}
 			ret.type="fs"
@@ -165,6 +166,7 @@ function happyHour(requestObject, filter, res){
 			ret.hours = result.venue.hours
 			ret.address = result.venue.location.address+' '+result.venue.location.city+' '+result.venue.location.state+' '+result.venue.location.postalCode
 			ret.url = result.venue.url
+			console.log(ret)
 			return ret
 		})
 		res.json({count:newResults.length,results:newResults})
