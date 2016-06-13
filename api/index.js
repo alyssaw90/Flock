@@ -132,10 +132,9 @@ function filterHappyHour(requestObject, res){
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
 		snapshot.forEach(function(data){
-			console.log('--snap--')
-			console.log(snapshot)
-			console.log('--snap--')
 			var val = data.val()
+			console.log('--dat--')
+			console.log(val)
 			if(val[day]){
 				var range = val[day].split('-')
 				var startHour = parseInt(range[0].split(':')[0])
@@ -146,6 +145,7 @@ function filterHappyHour(requestObject, res){
 					filtered.push(data.key())
 			}
 		})
+		console.log(day, hour)
 		happyHour(requestObject, filtered, res)
 	})
 }	
