@@ -130,8 +130,9 @@ function seatgeek(requestObject, res){
 }
 
 function filterHappyHour(requestObject, timestamp, res){
-	var day = (new Date(timestamp)).getDay()
-	var hour = (new Date(timestamp)).getHours()
+	var dateOffset = new Date(new Date()-3600000*7)
+	var day = dateOffset.getDay()
+	var hour = dateOffset.getHours()
 	console.log(day)
 	console.log(hour)
 	if(hour===0){hour=24}
