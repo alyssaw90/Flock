@@ -144,7 +144,8 @@ $(function(){
             url: '/api/search',
             data:{
                 ll: curLat+","+curLong,
-                type: type
+                type: type,
+                timestamp: new Date()
             }
         }).done(function(response){
             addMarkers(response.results, type)

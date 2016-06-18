@@ -27,7 +27,6 @@ router.get('/search', function(req, res){
 		return res.status(400).json({error:"Invalid search type."})
 	}
 	var ll = req.query.ll
-	console.log(ll)
 	var type = req.query.type
 	var requestObject = {
 		url:"https://api.foursquare.com/v2/venues/explore",
@@ -42,7 +41,11 @@ router.get('/search', function(req, res){
 		}
 	}
 	if(type==='drinks'){
-		filterHappyHour(requestObject, res)
+		var timestamp = req.query.timestamp
+		if(!timestamp){
+			return res.status(500).json({error:'no timestamp'})
+		}
+		filterHappyHour(requestObject, timestamp, res)
 	}else{
 		foursquare(requestObject, res)
 	}
@@ -101,6 +104,7 @@ function foursquare(requestObject, res){
 			ret.hours = result.venue.hours
 			ret.address = result.venue.location.address+' '+result.venue.location.city+' '+result.venue.location.state+' '+result.venue.location.postalCode
 			ret.url = result.venue.url
+			ret.image = result.venue.photos
 			return ret
 		})
 		res.json({count:results.length,results:newResults})
@@ -121,14 +125,17 @@ function seatgeek(requestObject, res){
 			return ret
 			//no venue image, but some performance images
 		})
-		console.log(newResults)
 		res.json({count:results.meta.total,results:newResults})
 	})
 }
 
-function filterHappyHour(requestObject, res){
-	var day = new Date().getDay()
-	var hour = new Date().getHours()
+function filterHappyHour(requestObject, timestamp, res){
+	var dateOffset = new Date(new Date()-3600000*7)
+	var day = dateOffset.getDay()
+	var hour = dateOffset.getHours()
+	console.log(day)
+	console.log(hour)
+	if(hour===0){hour=24}
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
 		snapshot.forEach(function(data){
@@ -152,9 +159,10 @@ function happyHour(requestObject, filter, res){
 		var results = JSON.parse(body).response.groups[0].items
 		var newResults = results.filter(function(result){
 			var id=result.venue.id
-			if(filter.indexOf(id)!==-1)
+			if(filter.indexOf(id)!==-1){
 				return true
-			return false	
+			}
+			return false
 		}).map(function(result){
 			var ret = {}
 			ret.type="fs"
