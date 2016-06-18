@@ -26,15 +26,17 @@
 <div class="map-section">
 <div class="navbar navbar-default navbar-fixed-top" role="navigation"> 
 		<a href="#" onclick="toggle_visibility('address-form');">
-			<h1 id="#">905 NE 66th St<i href="#" class="fa fa-chevron-circle-down address-dropdown"></i></h1>
+			<h1 id="currentLocation"><i href="#" class="fa fa-chevron-circle-down address-dropdown"></i></h1>
 		</a>
 		<div class="row" id="address-form">
-			<div class="form-group col-xs-11" id="address-field">
-	      		<input class="form-control" id="address" placeholder="Enter Address">
-	         </div>
-	         <div class="form-grou col-xs-1">
-	         	<button class="form-control" id="search-address">Search</button>
-	         </div>
+			<form id="locationSearch">
+				<div class="form-group col-xs-11" id="address-field">
+		      		<input class="form-control" id="address" placeholder="Enter Address">
+		         </div>
+		         <div class="form-grou col-xs-1">
+		         	<button class="form-control" type="submit" id="search-address">Search</button>
+		         </div>
+	         </form>
          </div>
 	</div>
 <div id="map">Loading Map</div>

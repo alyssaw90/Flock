@@ -59,7 +59,8 @@ $(function(){
             navigator.geolocation.getCurrentPosition(function success(position){
                 myLat = position.coords.latitude
                 myLong = position.coords.longitude
-                setHome(myLat,myLong)
+                searchLocationReverse(myLat,myLong)
+                console.log(position)
             }, function error(){
 
             })
@@ -74,16 +75,36 @@ $(function(){
     }
 
 
-    $('#search-address').click(function(){
-        var address = $('#address').val()
-        searchLocation(address)
+    $('#locationSearch').on('submit', function(e){
+        e.preventDefault();
+        var address = $('#address').val();
+        searchLocation(address);
     })
+
+    function updateLocationBar(address){
+        $("#currentLocation").html(address)
+    }
+
+    function searchLocationReverse(lat, lon){
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lon+"&key="+googleKey;
+        $.get({
+            url:url
+        }).done(function(res){
+            updateLocationBar(res.results[0].formatted_address);
+            var location = res.results[0].geometry.location
+            var lat = location.lat
+            var long = location.lng
+            // initMap(lat,long)
+            setHome(lat, long)
+        })
+    }
 
     function searchLocation(address){
         var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+googleKey
         $.get({
             url:url
         }).done(function(res){
+            updateLocationBar(res.results[0].formatted_address);
             var location = res.results[0].geometry.location
             var lat = location.lat
             var long = location.lng
@@ -171,14 +192,14 @@ $(function(){
             //     features:[]
             // }
             results.forEach(function(result){
-                console.log(result)
+                // console.log(result)
                 addMarker(result, type)
             })
         }
     }
 
     function addMarker(result, type){
-        console.log(type)
+        // console.log(type)
         var marker = L.marker([result.lat, result.lon])
         marker.setIcon(L.icon({
           "iconUrl": iconUrls[type],
@@ -191,8 +212,8 @@ $(function(){
         marker.on('click', function(e){
             //Here, we can do whatever we need with result
             //to show details, populate pop-up, whatever
-            console.log(result);
-            console.log(type);
+            // console.log(result);
+            // console.log(type);
             // alert(result.name)
 
 

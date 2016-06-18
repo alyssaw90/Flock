@@ -101,7 +101,7 @@ function foursquare(requestObject, res){
 			ret.lat = result.venue.location.lat
 			ret.lon = result.venue.location.lng
 			ret.name = result.venue.name
-			ret.hours = result.venue.hours
+			ret.hours = result.venue.hours||{}
 			ret.address = result.venue.location.address+' '+result.venue.location.city+' '+result.venue.location.state+' '+result.venue.location.postalCode
 			ret.url = result.venue.url
 			ret.image = result.venue.photos
@@ -133,8 +133,6 @@ function filterHappyHour(requestObject, timestamp, res){
 	var dateOffset = new Date(new Date()-3600000*7)
 	var day = dateOffset.getDay()
 	var hour = dateOffset.getHours()
-	console.log(day)
-	console.log(hour)
 	if(hour===0){hour=24}
 	rootRef.child('bars').orderByChild('ID').once('value', function(snapshot){
 		var filtered = []
