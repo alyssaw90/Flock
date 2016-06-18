@@ -60,7 +60,6 @@ $(function(){
                 myLat = position.coords.latitude
                 myLong = position.coords.longitude
                 searchLocationReverse(myLat,myLong)
-                console.log(position)
             }, function error(){
 
             })
@@ -303,5 +302,6 @@ $(function(){
     //LOCATE BUTTON
     $('#locate').click(function(event){
         setHome(myLat, myLong);
+        searchLocationReverse(myLat, myLong);
     })
 })
