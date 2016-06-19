@@ -2,7 +2,7 @@
 
 
 body { margin:0; padding:0; }
-#map { position:absolute; top:9%; bottom:0; width:100%; }
+#map { position:absolute; top:10.9em; bottom:0; width:100%; }
 .navbar {
 	height: 7%;
 	background-color: #5dc0db;
@@ -149,7 +149,7 @@ body { margin:0; padding:0; }
 @media (min-width: 1308px) {
 
 	#map {
-		top:14%;
+		top:6.9em;
 	}
 
 	.locate-button {
