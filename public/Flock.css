@@ -96,12 +96,25 @@
 
 
 .backbutton {
-	position: absolute;
-	float: right;
+	// position: absolute;
+	// float: right;
 	width: 16px;
 	height: 20px;
-	top:22px;
-	right:30px;
+	// top:22px;
+	// right:30px;
+}
+
+.backlink {
+	position: absolute;
+	right: 20px;
+	color: white;
+	top: 14px;
+	text-decoration: none;
+}
+
+.backlink:active {
+	color:white;
+	text-decoration: none;
 }
 
 .backleft {

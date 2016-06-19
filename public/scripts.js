@@ -265,7 +265,7 @@ $(function(){
         $('.mobile-interests').show();
     });
 
-    $('.backbutton').click(function(){
+    $('.backlink').click(function(){
         $('.map-section').show();
         $('.mobile-interests').hide();
     })

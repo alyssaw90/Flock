@@ -7,7 +7,8 @@ $(document).ready(function(){
 		$('.mobile-interests').show();
 	});
 
-	$('.backbutton').click(function(){
+	$('.backlink').click(function(){
+		console.log('click working')
 		$('.map-section').show();
 		$('.mobile-interests').hide();
 	})
