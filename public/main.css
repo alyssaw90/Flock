@@ -152,6 +152,10 @@ body { margin:0; padding:0; }
 		top:6.9em;
 	}
 
+	.select-blue {
+		background: #5dc0db;
+	}
+
 	.locate-button {
 		width: 100px;
 		height: 100px;
@@ -249,5 +253,115 @@ body { margin:0; padding:0; }
 
    .select-blue {
    	background: #5dc0db;
+   }
+
+   .interest-name-food{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:25%;
+
+   }
+
+   .interest-name-happyhour{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:-5%;
+
+   }
+
+   .interest-name-music{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:23%;
+
+   }
+
+   .interest-name-sports{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:19%;
+
+   }
+
+   .interest-name-culture{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:15%;
+
+   }
+
+   .interest-name-coffee{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:19%;
+
+   }
+
+   .interest-name-shopping{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:7%;
+
+   }
+
+   .interest-name-festivals{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:10%;
+
+   }
+
+   .interest-name-outdoors{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:7%;
+
+   }
+
+   .interest-name-landmarks{
+   	font-family: 'Montserrat';
+   	font-size: 15px;
+   	color:white;
+   	text-shadow: 1px 1px black;
+   	position:absolute;
+   	top:115%;
+   	left:4%;
+
    }
 }

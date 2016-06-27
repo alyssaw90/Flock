@@ -304,4 +304,35 @@ $(function(){
         setHome(myLat, myLong);
         searchLocationReverse(myLat, myLong);
     })
+
+    $("#food").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#drinks").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#music").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#sports").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#cultural").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#coffee").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#shops").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#festival").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#outdoors").click(function(){
+        $(this).toggleClass("select-blue");
+     });
+    $("#landmarks").click(function(){
+        $(this).toggleClass("select-blue");
+     });
 })
